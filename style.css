@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+}
+.bar { 
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+}   
+.nav-item-contain {
+    display: flex;
+    font-size: 26px;
+    margin: 10px;
+    justify-content: space-between;
+    justify-items: center;
+}
+.nav-item{
+    display: flex;
+    margin: 10px;
+}
+.item {
+    font-size: 26px;
+    justify-content: left;
+}
+img {
+    justify-content: center;
+}
