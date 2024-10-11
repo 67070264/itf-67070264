@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lab14_style.css">
+</head>
+<body>
+    <div class = "name">
+        <h1 id = "username">
+            <a href="https://github.com/67070264">
+            <b>Phattharaphon Promthong 67070264</b>
+            </a>
+        </h1>
+    </div>
+
+    <div class = "border">
+        <div class="profile" id="profile">
+            <div class = "notify">
+                <p>1</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="MainContent">  
+        <div class="Username">
+        <label>Set Username :</label><input id = "input" type="text"><button onclick="setName()">set</button>
+        </div>
+
+        <div class="urlimg">
+        <label>Input URL Image :</label><input id = "input-img" type="text"><button onclick="setImg()">set</button>
+        </div>
+
+    <input type="text">
+    <input type="text">
+    <button onclick="addRow()">add</button>
+    <table id = "table">
+        <tr>
+            <th>name</th>
+            <th>phone number</th>
+        </tr>
+    </table>
+    </div>
+    <script>
+        const name = document.getElementById("username");
+        const inputName = document.getElementById("input");
+        const profile = document.getElementById("profile");
+        const url = document.getElementById("input-img");
+        const table = document.getElementById("table");
+        function setName(){
+            name.textContent = inputName.value + ", Welcome back";
+            inputName.value = "";
+        }
+        function setImg(){
+            profile.style.backgroundImage = "url(" +  url.value + ")";
+        }
+        function addRow(){
+            const newRow = document.createElement("tr");
+            const cell = document.createElement("td");
+            const cell2 = document.createElement("td");
+            cell.textContent = "abdd"
+            cell2.textContent = "4153243"
+            newRow.appendChild(cell);
+            newRow.appendChild(cell2);
+            table.appendChild(newRow);
+        }
+    </script>
+</body>
+</html>

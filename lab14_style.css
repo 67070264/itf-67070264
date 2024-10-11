@@ -1,0 +1,51 @@
+.profile{
+    width: 183px;
+    height: 183px;
+    background-color: blanchedalmond;
+    background-image: url(https://www.bing.com/th?id=OIP.GIWk2FIdIIftel5tj_AgzgHaHa&w=160&h=150&c=8&rs=1&qlt=90&r=0&o=6&pid=3.1&rm=2);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.notify{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.border{
+    border: 5px solid red;
+    justify-content: center;
+    display: flex;
+}
+.name b{
+    justify-content: center;
+    display: flex;
+    color: black;
+}
+.name a{
+    text-decoration: none;
+}
+.MainContent{
+    margin: 20px;
+    justify-content: center;
+    display:grid;
+}
+
+.name:hover b{
+    color: blue;
+    text-decoration: underline;
+}
+.Username{
+    display: grid;
+}
+.urlimg{
+    display: grid;
+}
