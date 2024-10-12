@@ -21,7 +21,6 @@
     right: 15px;
 }
 .border{
-    border: 5px solid red;
     justify-content: center;
     display: flex;
 }
@@ -43,9 +42,18 @@
     color: blue;
     text-decoration: underline;
 }
+
 .Username{
-    display: grid;
+    display:block;
 }
+
 .urlimg{
-    display: grid;
+    display: block;
+    margin: 20px;
+    
+}
+
+.PhoneList{
+    display: flex;
+    justify-content: center;
 }
