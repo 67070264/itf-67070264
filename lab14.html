@@ -10,7 +10,7 @@
     <div class = "name">
         <h1 id = "username">
             <a href="https://github.com/67070264">
-            <b>Phattharaphon Promthong 67070264</b>
+            <b id="b">Phattharaphon Promthong 67070264</b>
             </a>
         </h1>
     </div>
@@ -41,21 +41,30 @@
     </div>
 
     <div class="Addphone">
-        <input class="EnterName" type="text" placeholder="Enter Name">
-        <input class="EnterPhone" type="text" placeholder="Enter Phone Number">
+        <input id="cell1" class="EnterName" type="text" placeholder="Enter Name">
+        <input id="cell2" class="EnterPhone" type="text" placeholder="Enter Phone Number">
         <button class="Add" onclick="addRow()">Add</button>
         <button class="Export" onclick="saveCSV()">Export</button>
     </div>
 
-        <table class="table" id = "table">
+    <div class="table">
+        <table id = "table">
             <tr>
+                <th>NO.</th>
                 <th>name</th>
                 <th>phone number</th>
             </tr>
         </table>
-    <script>
+    </div>
+    
+    <footer class="footer">
+        <h3>Made by Phattharaphon 67070264</h3>
+    </footer>
 
-        const name = document.getElementById("username");
+    <script>
+        let count = 0;
+        var phonenumber = [];
+        const name = document.getElementById("b");
         const inputName = document.getElementById("input");
         const profile = document.getElementById("profile");
         const url = document.getElementById("input-img");
@@ -70,14 +79,29 @@
         }
 
         function addRow(){
-            const newRow = document.createElement("tr");
-            const cell = document.createElement("td");
-            const cell2 = document.createElement("td");
-            cell.textContent = document.getElementById("cell")
-            cell2.textContent = document.getElementById("cell2")
-            newRow.appendChild(cell);
-            newRow.appendChild(cell2);
-            table.appendChild(newRow);
+            count += 1;
+            const row = document.createElement("tr");
+            const cellNo = document.createElement("td");
+            const cellName = document.createElement("td");
+            const cellTel = document.createElement("td");
+            cellNo.textContent = count;
+            cellName.textContent = document.getElementById("cell1").value;
+            cellTel.textContent = document.getElementById("cell2").value;
+            row.appendChild(cellNo);
+            row.appendChild(cellName);
+            row.appendChild(cellTel);
+            const table = document.getElementById("table");
+            table.appendChild(row);
+    
+            let arr = [];
+            arr.push(count);
+            arr.push(document.getElementById("cell1").value);
+            arr.push(document.getElementById("cell2").value);
+            phonenumber.push(arr);
+            console.log(phonenumber);
+    
+            document.getElementById("cell1").value = "";
+            document.getElementById("cell2").value = "";
         }
         
         function saveCSV(){

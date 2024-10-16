@@ -4,6 +4,7 @@
     border-radius: 60%;
 }
 .profile{
+    margin-top: 20px;
     width: 183px;
     height: 183px;
     background-color: blanchedalmond;
@@ -88,6 +89,8 @@
 .table{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    width: 100%;
 }
 
 #setImg{
@@ -96,4 +99,14 @@
 
 div {
     border: 1px solid chocolate;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #674636;
 }
