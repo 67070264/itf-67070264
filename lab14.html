@@ -23,29 +23,38 @@
         </div>
     </div>
 
-    <div class="MainContent">
+
         <div class="Username">
-        <label>Set Username :</label><input id = "input" type="text"><button onclick="setName()">set</button>
+        <label>Set Username :</label>
+        <input id = "input" type="text" placeholder="Enter Username">
+            <button onclick="setName()" id="setUsername">set</button>
         </div>
 
         <div class="urlimg">
-        <label>Input URL Image :</label><input id = "input-img" type="text"><button onclick="setImg()">set</button>
+        <label class="txturlimg">Input URL Image :</label>
+        <input id = "input-img" type="text" placeholder="Enter URL Image">
+            <button onclick="setImg()" id="setImg">set</button>
         </div>
 
     <div class = "PhoneList">
-        <p><h1>Phone List</h1></p>
+        <p><h1>Phone's Number List</h1></p>
     </div>
-    <input type="text">
-    <input type="text">
-    <button onclick="addRow()">add</button>
-    <table id = "table">
-        <tr>
-            <th>name</th>
-            <th>phone number</th>
-        </tr>
-    </table>
+
+    <div class="Addphone">
+        <input class="EnterName" type="text" placeholder="Enter Name">
+        <input class="EnterPhone" type="text" placeholder="Enter Phone Number">
+        <button class="Add" onclick="addRow()">Add</button>
+        <button class="Export" onclick="saveCSV()">Export</button>
     </div>
+
+        <table class="table" id = "table">
+            <tr>
+                <th>name</th>
+                <th>phone number</th>
+            </tr>
+        </table>
     <script>
+
         const name = document.getElementById("username");
         const inputName = document.getElementById("input");
         const profile = document.getElementById("profile");
@@ -55,19 +64,34 @@
             name.textContent = inputName.value + ", Welcome back";
             inputName.value = "";
         }
+
         function setImg(){
             profile.style.backgroundImage = "url(" +  url.value + ")";
         }
+
         function addRow(){
             const newRow = document.createElement("tr");
             const cell = document.createElement("td");
             const cell2 = document.createElement("td");
-            cell.textContent = "abdd"
-            cell2.textContent = "4153243"
+            cell.textContent = document.getElementById("cell")
+            cell2.textContent = document.getElementById("cell2")
             newRow.appendChild(cell);
             newRow.appendChild(cell2);
             table.appendChild(newRow);
         }
+        
+        function saveCSV(){
+        const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "data.csv");
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        };
     </script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+.profile:hover{
+    width: 200px;
+    height: 200px;
+    border-radius: 60%;
+}
 .profile{
     width: 183px;
     height: 183px;
@@ -7,6 +12,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    transition: width 0.4s , height 0.4s;
 }
 .notify{
     width: 30px;
@@ -44,16 +50,50 @@
 }
 
 .Username{
-    display:block;
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .urlimg{
-    display: block;
-    margin: 20px;
-    
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .PhoneList{
     display: flex;
     justify-content: center;
+}
+
+.Addphone{
+    display: flex;
+    justify-content: center;
+}
+
+.Add{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.EnterName{
+    margin-right: 70px;
+}
+
+#setUsername{
+    margin-left: 40px;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+}
+
+#setImg{
+    margin-left: 40px;
+}
+
+div {
+    border: 1px solid chocolate;
 }
